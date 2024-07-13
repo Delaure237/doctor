@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\167da29de29e7aa4bfd19afbc2d20edb\nuget-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\167da29de29e7aa4bfd19afbc2d20edb\nuget-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\167da29de29e7aa4bfd19afbc2d20edb\nuget-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\167da29de29e7aa4bfd19afbc2d20edb\nuget-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\167da29de29e7aa4bfd19afbc2d20edb\nuget-populate-copyfile.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\167da29de29e7aa4bfd19afbc2d20edb\nuget-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\167da29de29e7aa4bfd19afbc2d20edb\nuget-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\167da29de29e7aa4bfd19afbc2d20edb\nuget-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\167da29de29e7aa4bfd19afbc2d20edb\nuget-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\7f18f9d8508655da702ce4d0dd756c6b\nuget-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\ab66a8e7259a9dfefa8505c12e71c988\nuget-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\pc\Desktop\Nouveau dossier\doctor\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\nuget-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{17E7FE36-F6A6-347D-9746-1AE52D785F48}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

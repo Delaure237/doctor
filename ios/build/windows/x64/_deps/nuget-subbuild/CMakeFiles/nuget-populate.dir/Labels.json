@@ -1,0 +1,49 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/nuget-populate"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/ab66a8e7259a9dfefa8505c12e71c988/nuget-populate.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/7f18f9d8508655da702ce4d0dd756c6b/nuget-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/167da29de29e7aa4bfd19afbc2d20edb/nuget-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/167da29de29e7aa4bfd19afbc2d20edb/nuget-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/167da29de29e7aa4bfd19afbc2d20edb/nuget-populate-copyfile.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/167da29de29e7aa4bfd19afbc2d20edb/nuget-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/167da29de29e7aa4bfd19afbc2d20edb/nuget-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/167da29de29e7aa4bfd19afbc2d20edb/nuget-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/167da29de29e7aa4bfd19afbc2d20edb/nuget-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/167da29de29e7aa4bfd19afbc2d20edb/nuget-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/pc/Desktop/Nouveau dossier/doctor/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/167da29de29e7aa4bfd19afbc2d20edb/nuget-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"nuget-populate"
+		],
+		"name" : "nuget-populate"
+	}
+}

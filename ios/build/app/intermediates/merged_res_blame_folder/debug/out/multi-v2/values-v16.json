@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.doctor.app-mergeDebugResources-24:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-3\\101c8472ad1aa9a6b923a00a11d11a84\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}
