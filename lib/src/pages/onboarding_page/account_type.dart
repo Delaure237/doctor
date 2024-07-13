@@ -1,6 +1,4 @@
 
-
-
 import 'package:doctor/blocs/account_type/bloc/account_type_bloc.dart';
 import 'package:doctor/src/pages/onboarding_page/widgets/next_button.dart';
 import 'package:flutter/material.dart';
@@ -135,9 +133,14 @@ class _AccountTypeState extends State<AccountType> {
                         }
                         
                         context.read<AccountTypeBloc>().add(  SelectedAccountEvent(role!));
-                        },)
-                    ])));
+                        },
+                         )
+                          ]
+                         )
+                        )
+                    );
       },
-    ));
+    )
+    );
   }
 }
