@@ -28,6 +28,7 @@ dependencies:
   iconsax: ^0.0.8
   image_picker: ^1.1.0
   intl: ^0.19.0
+  mobile_scanner: ^5.1.1
   open_street_map_search_and_pick: ^0.1.1
   shared_preferences: ^2.2.3
   single_option_picker: ^1.0.1+2

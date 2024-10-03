@@ -1,0 +1,105 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "doctor",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "doctor (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "doctor (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "appointment_repository",
+            "cwd": "appointment_package\\appointment_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "appointment_repository (profile mode)",
+            "cwd": "appointment_package\\appointment_repository",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "appointment_repository (release mode)",
+            "cwd": "appointment_package\\appointment_repository",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "communication_repository",
+            "cwd": "communication_package\\communication_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "communication_repository (profile mode)",
+            "cwd": "communication_package\\communication_repository",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "communication_repository (release mode)",
+            "cwd": "communication_package\\communication_repository",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "doctor_repository",
+            "cwd": "doctor_package\\doctor_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "doctor_repository (profile mode)",
+            "cwd": "doctor_package\\doctor_repository",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "doctor_repository (release mode)",
+            "cwd": "doctor_package\\doctor_repository",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "user_repository",
+            "cwd": "package\\user_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "user_repository (profile mode)",
+            "cwd": "package\\user_repository",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "user_repository (release mode)",
+            "cwd": "package\\user_repository",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
