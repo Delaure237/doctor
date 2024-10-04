@@ -176,6 +176,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.5"
+    version: "1.0.8"
   doctor_repository:
     dependency: "direct main"
     description:
@@ -861,6 +862,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1"
+    version: "2.3.0"
   petitparser:
     dependency: transitive
     description:
@@ -973,6 +975,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+    version: "2.4.1"
   single_option_picker:
     dependency: "direct main"
     description:
