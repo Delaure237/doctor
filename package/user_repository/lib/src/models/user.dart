@@ -9,14 +9,14 @@ class MyUser extends Equatable {
   final String fullname;
   final String email;
   final String password;
-  final String path;
+  //final String path;
 
   const MyUser({
         required this.userId,
         required this.fullname,
         required this.email,
         required this.password,
-        required this.path
+        //required this.path
   });
 
   static const empty = MyUser(
@@ -24,22 +24,22 @@ class MyUser extends Equatable {
        fullname: "",
        email: "",
        password: "", 
-       path: "",
+    //   path: "",
     );
 
   MyUser copyWith({
        String? password,
-       String? path,
+     String ? userId,
        String? email,
        String? fullname,
-       String? userId
+   
   }) {
        return MyUser(
        userId: userId ?? this.userId,
        fullname: fullname ?? this.fullname, 
        email: email?? this.email,
-       password: password ?? this.password,
-       path: path ?? this.path       
+       password: password ?? this.password
+      // path: path ?? this.path       
         );
   }
 
@@ -48,8 +48,8 @@ class MyUser extends Equatable {
       userId: userId, 
       fullname: fullname, 
       email: email, 
-      password: password, 
-      path:path
+      password: password
+     // path:path
       );
   }
 
@@ -58,9 +58,10 @@ static MyUser fromEntity(MyUserEntity entity){
          userId: entity.userId,
          fullname: entity.fullname,
          email: entity.email,
-         password: entity.password, 
-         path: entity.path);
+         password: entity.password
+  );
+       //  path: entity.path
   
 } @override 
- List<Object> get props => [userId,email,fullname,password,path];
+ List<Object?> get props => [userId,fullname,email,password];
 }

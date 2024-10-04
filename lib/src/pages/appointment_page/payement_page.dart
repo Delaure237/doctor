@@ -1,8 +1,8 @@
 
 // ignore_for_file: unused_field
 
-import 'package:doctor/src/pages/shared_between_pages/constant/constant.dart';
-import 'package:doctor/src/pages/shared_between_pages/widgets/my_button.dart';
+import 'package:doctor/src/pages/shared/constant/constant.dart';
+import 'package:doctor/src/pages/shared/widgets/my_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -10,7 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 
-import '../shared_between_pages/widgets/appbar.dart';
+import '../shared/widgets/appbar.dart';
 class Payement extends StatefulWidget {
   const Payement({super.key});
 
@@ -28,6 +28,8 @@ class _PayementState extends State<Payement> {
      "lib/asset/images/icons8-mastercard.svg",
      "lib/asset/images/icons8-apple-pay.svg"
     ];
+    final String privateKey =  "pk_test_51Q0mHqCUVI3fULzdEMeIgLlJnIykQbN4nQQvRpbUdYKRz4WfZVhpKcYX8iBbXe9PIMltv6xmcVthnECyNUPHd8pV00jVaKuzrK";
+     final String    publicKey = "pk_test_51Q0mHqCUVI3fULzdEMeIgLlJnIykQbN4nQQvRpbUdYKRz4WfZVhpKcYX8iBbXe9PIMltv6xmcVthnECyNUPHd8pV00jVaKuzrK";
 final List<String> _text = [
  "Paypal",
  "Master card",
@@ -36,7 +38,7 @@ final List<String> _text = [
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Header(context, "Appointment"),
+      appBar: Header(context, "Appointment",[]),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8),

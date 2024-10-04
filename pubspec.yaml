@@ -1,16 +1,27 @@
 name: doctor
 description: "A new Flutter project."
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
   sdk: ">=3.4.0-190.0.dev <4.0.0"
 dependencies:
+  agora_rtc_engine:
+    git:
+      url: https://github.com/AgoraIO-Extensions/Agora-Flutter-SDK.git
+      ref: main
   animated_segmented_tab_control: ^2.0.0
+  animated_text_kit: ^4.2.2
   animations: ^2.0.11
+  appointment_repository:
+    path: appointment_package/appointment_repository
   bloc: ^8.1.3
+  calender_picker: ^2.0.2
   cloud_firestore: ^4.16.1
+  communication_repository:
+    path: communication_package/communication_repository
   cupertino_icons: ^1.0.6
+  date_picker_timeline: ^1.2.5
   doctor_repository:
     path: doctor_package/doctor_repository
   equatable: ^2.0.5
@@ -25,16 +36,23 @@ dependencies:
   flutter_svg: ^2.0.10+1
   geolocator: ^10.1.1
   google_fonts: ^6.2.1
+  google_sign_in: ^6.2.1
   iconsax: ^0.0.8
   image_picker: ^1.1.0
-  intl: ^0.19.0
+  intl: 0.18.1 # Choisissez la version souhaitée
+  medecine_repository:
+    path: medecine_package/medecine_repository
   mobile_scanner: ^5.1.1
   open_street_map_search_and_pick: ^0.1.1
+  permission_handler: ^11.3.1
   shared_preferences: ^2.2.3
+  shimmer: ^3.0.0
   single_option_picker: ^1.0.1+2
   smooth_page_indicator: ^1.1.0
+  staggered_grid_view_flutter: ^0.0.4
   user_repository:
     path: package/user_repository
+  uuid: ^4.4.2
 
 dev_dependencies:
   flutter_lints: ^3.0.1
@@ -44,7 +62,8 @@ flutter:
   uses-material-design: true
   assets:
     - lib/asset/images/
-
+    - lib/asset/images/test.png
+    - lib/asset/images/no_message.png
   fonts:
     - family: arial
       fonts:

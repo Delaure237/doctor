@@ -7,14 +7,14 @@ class MyUserEntity extends  Equatable {
   final String fullname;
   final String email;
   final String password;
-  final String path;
+  //final String path;
 
   const MyUserEntity({
       required this.userId,
       required this.fullname,
       required this.email,
-      required this.password,
-      required this.path
+      required this.password
+    //  required this.path
   });
 
   Map<String, Object?> toDocument() {
@@ -22,20 +22,21 @@ class MyUserEntity extends  Equatable {
        'userId':userId,
        'fullname':fullname, 
        'email':email, 
-       'password': password,
-       'path': path,
+       'password': password
+//'path': path,
     };
   }
   static MyUserEntity fromDocument(Map<String ,dynamic> doc) {
-    return MyUserEntity(
-      userId: doc['userId'], 
-      fullname: doc['fullname'], 
-      email: doc['email'], 
-      password: doc['password'], 
-      path: doc['path'],
-      );
-  }
+  return MyUserEntity(
+    userId: doc['userId'] , 
+    fullname: doc['fullname'] , 
+    email: doc['email'] , 
+    password: doc['password'] 
+//    path: doc['path'] ?? '',
+  );
+}
+
   @override
-   List<Object> get props => [userId,fullname,email,password,path];
+   List<Object?> get props => [userId, fullname, email, password];
 
 }

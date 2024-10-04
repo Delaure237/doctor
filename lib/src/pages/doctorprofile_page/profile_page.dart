@@ -1,18 +1,18 @@
-// ignore_for_file: unused_local_variable, dead_code
+// ignore_for_file: unused_local_variable, dead_code, unused_import
 
 
-import 'package:doctor/src/models/doctor.dart';
 import 'package:doctor/src/pages/appointment_page/date_hour_appointment.dart';
-import 'package:doctor/src/pages/homepage/homepage_conponent/nav_bar.dart';
-import 'package:doctor/src/pages/shared_between_pages/widgets/title.dart';
+import 'package:doctor/src/pages/home/homepage_conponent/nav_bar.dart';
+import 'package:doctor/src/pages/shared/widgets/title.dart';
+import 'package:doctor_repository/doctor_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 //import '../appointment_page/apointment.dart';
-import '../shared_between_pages/constant/constant.dart';
-import '../shared_between_pages/widgets/my_button.dart';
+import '../shared/constant/constant.dart';
+import '../shared/widgets/my_button.dart';
 class ProfilePage extends StatefulWidget {
-  final Doctor doctor;
+  final MyDoctor doctor;
   const ProfilePage({super.key,required this.doctor});
 
   @override
@@ -50,24 +50,12 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: secondaryColor.withOpacity(0.2),
 
                     ),
-                    child: const Text(
-                      """ 
-
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corporis asperiores facilis est itaque ipsam quam tempora. Eaque, consequuntur aspernatur adipisci explicabo cupiditate doloribus consequatur ipsa facere reprehenderit, nesciunt laboriosam.
-    Ducimus impedit, dolorum expedita blanditiis aperiam, nulla temporibus maiores corporis aut repudiandae veritatis iure voluptate dicta id cumque rerum natus delectus deserunt quod esse enim illo libero? Atque, expedita iusto.
-    Hic, aliquam nostrum placeat voluptate voluptatem facere, quo beatae, vero necessitatibus earum reiciendis ipsam consequatur cum iusto corporis nihil eius ad suscipit! Illo corrupti in, dolor aperiam nam nulla id.
-    Quibusdam architecto corrupti neque obcaecati ad amet rem hic impedit similique error minus odit incidunt accusamus saepe, tempore cum delectus iusto odio? Consectetur laudantium natus quis sed incidunt adipisci labore!
-    Deserunt nisi ducimus in necessitatibus nulla eveniet voluptatum blanditiis explicabo? Deleniti temporibus sint dolores cumque reprehenderit illo eaque sunt! Soluta natus fugit fugiat, cumque ducimus et mollitia. Nesciunt, vero blanditiis!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corporis asperiores facilis est itaque ipsam quam tempora. Eaque, consequuntur aspernatur adipisci explicabo cupiditate doloribus consequatur ipsa facere reprehenderit, nesciunt laboriosam.
-    Ducimus impedit, dolorum expedita blanditiis aperiam, nulla temporibus maiores corporis aut repudiandae veritatis iure voluptate dicta id cumque rerum natus delectus deserunt quod esse enim illo libero? Atque, expedita iusto.
-    Hic, aliquam nostrum placeat voluptate voluptatem facere, quo beatae, vero necessitatibus earum reiciendis ipsam consequatur cum iusto corporis nihil eius ad suscipit! Illo corrupti in, dolor aperiam nam nulla id.
-    Quibusdam architecto corrupti neque obcaecati ad amet rem hic impedit similique error minus odit incidunt accusamus saepe, tempore cum delectus iusto odio? Consectetur laudantium natus quis sed incidunt adipisci labore!
-    Deserunt nisi ducimus in necessitatibus nulla eveniet voluptatum blanditiis explicabo? Deleniti temporibus sint dolores cumque reprehenderit illo eaque sunt! Soluta natus fugit fugiat, cumque ducimus et mollitia. Nesciunt, vero blanditiis!
-                       """
-                      , maxLines: 6,
-                      style: TextStyle(
+                    child: Text(
+                    widget.doctor.about
+                      , maxLines: 4,
+                      style: const TextStyle(
                         fontSize: 12,
-                        fontFamily: "arial"
+                     
                       ),
 
                     ),
@@ -89,7 +77,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ListTile(
                     minVerticalPadding: 6,
                     title: Title( "Working Time"),
-                    subtitle:const  Text("Mon-Fri,03:00 PM - 06:00PM",
+                    subtitle:const  Text(" Mon-Fri , 03:00 PM - 06:00 PM",
                       style: TextStyle(
                           color: Colors.grey, fontSize: 12),),
 
@@ -97,11 +85,11 @@ class _ProfilePageState extends State<ProfilePage> {
 
                   MyButton(onTap: () {
                    
-                    setState(() {
+               
                      
-                       Navigator.push(context, MaterialPageRoute(builder: (ctx2) =>const  AppointmentInfo()));
-                  },
-                   );
+                       Navigator.push(context, MaterialPageRoute(builder: (context1) => AppointmentInfo(doctor: widget.doctor,)));
+                  
+                   
                     },text: "Book an Appointment")
                   
                 ]
@@ -134,7 +122,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ),
                                 child: GestureDetector(child: const Icon(CupertinoIcons.back,color: Colors.grey),onTap: (){
                                 
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const ExploreBar()));
+                                Navigator.pushAndRemoveUntil(
+  context, 
+  MaterialPageRoute(builder: (context) => const ExploreBar()), 
+  (Route<dynamic> route) => false
+);
+
                                   
                                 },),
                               
@@ -169,8 +162,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                     width: isImageExpanded ? 200 : 130,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15),
-                                      image: DecorationImage(
-                                          image: AssetImage(widget.doctor.path),
+                                      image: const DecorationImage(
+                                          image: AssetImage("lib/asset/images/placeholder.png"),
                                           fit: BoxFit.fill),
                                     ),
                                     curve: Curves.fastEaseInToSlowEaseOut,
@@ -183,7 +176,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       ListTile(
-
+                                          minVerticalPadding: 10,
                                         title: Text(
                                           widget.doctor.name, maxLines: 1,
                                           overflow: TextOverflow.ellipsis,
@@ -191,8 +184,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                               color: Colors.black,
                                               fontSize: 16,
                                               fontWeight: FontWeight.bold,
-                                              wordSpacing: -1,
-                                              letterSpacing: -1),),
+                                       
+                                            ),),
                                         subtitle: Text(
                                           widget.doctor.speciality,
                                           style: const TextStyle(
@@ -203,16 +196,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                         isThreeLine: true,
                                       ),
                                       ListTile(
-                                        title: Text(widget.doctor.name,
+                                        title: Text(widget.doctor.place,
                                           style: const TextStyle(
                                               color: Colors.grey,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold,
                                               wordSpacing: -1,
                                               letterSpacing: -1),),
-                                        subtitle: Text(widget.doctor.speciality,
+                                        subtitle: Text("${widget.doctor.experience.toString()}Year exprerience ",
                                           style: const TextStyle(
-                                              color: Colors.grey,
+                                              color: Color.fromARGB(255, 35, 161, 88),
                                               fontSize: 12),),
                                       ),
 
@@ -264,7 +257,7 @@ class _ProfilePageState extends State<ProfilePage> {
           letterSpacing: -1,
           fontSize: 18,
           color: primaryColor,
-          fontFamily: "arial"
+     
       ),
     );
   }

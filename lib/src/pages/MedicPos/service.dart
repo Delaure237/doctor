@@ -1,5 +1,7 @@
 
 
+// ignore_for_file: avoid_print
+
 import 'package:mobile_scanner/mobile_scanner.dart';
 class QRCodeService {
   MobileScannerController controller = MobileScannerController();
@@ -35,4 +37,4 @@ class QRCodeService {
   void switchCamera() {
     controller.switchCamera();
   }
-}*/
+}

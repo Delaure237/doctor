@@ -1,9 +1,11 @@
 import "dart:async";
 
 
-import "package:doctor/src/pages/homepage/homepage_conponent/nav_bar.dart";
-import "package:doctor/src/pages/shared_between_pages/constant/constant.dart";
+
 import "package:flutter/material.dart";
+
+import "../../home/homepage_conponent/nav_bar.dart";
+import "../../shared/constant/constant.dart";
 
  class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -30,10 +32,10 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
       setState(() {
         _textOpacity = 1.0;
       });
-      
+
     });
     _controller.forward();
-    Timer(const Duration(seconds: 2), () { 
+    Timer(const Duration(seconds: 2), () {
       setState(() {
         _containerSize = 2;
         _containerOpacity = 1;
@@ -44,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const ExploreBar()));
        });
      });
-     
+
   }
   @override
   void dispose(){
@@ -77,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
         ),
         Center(
           child: AnimatedOpacity(
-            opacity: _containerOpacity, 
+            opacity: _containerOpacity,
           duration: const Duration(microseconds: 2000),
           curve: Curves.fastLinearToSlowEaseIn,
           child: AnimatedContainer(
@@ -104,7 +106,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
      ),
     );
   }
-  
+
 }
 class PageTransition extends PageRouteBuilder {
   final Widget page;

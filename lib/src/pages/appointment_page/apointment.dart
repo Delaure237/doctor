@@ -1,8 +1,8 @@
 
 import 'package:doctor/src/pages/appointment_page/payement_page.dart';
-import 'package:doctor/src/pages/shared_between_pages/constant/constant.dart';
-import 'package:doctor/src/pages/shared_between_pages/widgets/appbar.dart';
-import 'package:doctor/src/pages/shared_between_pages/widgets/my_button.dart';
+import 'package:doctor/src/pages/shared/constant/constant.dart';
+import 'package:doctor/src/pages/shared/widgets/appbar.dart';
+import 'package:doctor/src/pages/shared/widgets/my_button.dart';
 import 'package:flutter/material.dart';
 class Appointment extends StatefulWidget {
   const Appointment({super.key});
@@ -26,7 +26,7 @@ class _AppointmentState extends State<Appointment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Header(context, "Appointment"),
+      appBar: Header(context, "Appointment",[]),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8),

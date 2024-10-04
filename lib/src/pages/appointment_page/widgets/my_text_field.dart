@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../shared_between_pages/constant/constant.dart';
+import '../../shared/constant/constant.dart';
 class MyTextfield extends StatelessWidget {
 
   final void Function() ? onTap;

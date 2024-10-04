@@ -1,8 +1,8 @@
 // ignore_for_file: use_build_context_synchronously, avoid_print
 
-import 'package:doctor/src/pages/authentification_page/authentication_conponents/my_textfield.dart';
-import 'package:doctor/src/pages/shared_between_pages/constant/constant.dart';
-import 'package:doctor/src/pages/shared_between_pages/widgets/appbar.dart';
+import 'package:doctor/src/pages/auth/authentication_conponents/my_textfield.dart';
+import 'package:doctor/src/pages/shared/constant/constant.dart';
+import 'package:doctor/src/pages/shared/widgets/appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ class _ResetPasswordState extends State<ResetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Header(context, "Reset Password"),
+      appBar: Header(context, "Reset Password",[]),
       body: SafeArea(
         child: Column(
           children:[

@@ -1,84 +1,145 @@
-import 'package:doctor/src/pages/shared_between_pages/constant/constant.dart';
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
+import 'package:doctor_repository/doctor_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:doctor/src/pages/shared/constant/constant.dart';
+import 'package:appointment_repository/appointment_repository.dart';
 
+class TypeOfAppointment extends StatefulWidget {
+  final MyDoctor doctor;
+  final Function(AppointmentType) onSelectedType;
 
-import 'package:google_fonts/google_fonts.dart';
-import 'package:single_option_picker/single_option_picker.dart';
- 
- class Type extends StatefulWidget {
-  
-  const Type({super.key});
+  const TypeOfAppointment({
+    super.key,
+    required this.doctor,
+    required this.onSelectedType,
+  });
 
   @override
-  State<Type> createState() => _TypeState();
+  State<TypeOfAppointment> createState() => _TypeState();
 }
 
-class _TypeState extends State<Type> {
- 
- 
-  int selectedIndex = 0;
- final  List<String> _category = [
-    "\$5",
-    "\$15",
-    "\$25",
-  ];
-  final List<String> _imagePath = [
-      "lib/asset/images/c.png",
-      "lib/asset/images/m.png",
-      "lib/asset/images/v.png"
-  ];
+class _TypeState extends State<TypeOfAppointment> {
+  AppointmentType selectedAppointmentType = AppointmentType.message;
+
   @override
   Widget build(BuildContext context) {
-    return SingleOptionPicker(
-      selectedOptionIndex: selectedIndex,
-        numberOfOptions: 3,
-        onChangeOption:  (index) {
-          setState(() {
-            selectedIndex = index;
+    final Map<AppointmentType, String> _imagePath = {
+      AppointmentType.message: "lib/asset/images/m.png",
+      AppointmentType.videoCall: "lib/asset/images/v.png",
+      AppointmentType.audioCall: "lib/asset/images/c.png",
+    };
+
+    final Map<AppointmentType, String> _category = {
+      AppointmentType.message: "Message",
+      AppointmentType.videoCall: "Video Call",
+      AppointmentType.audioCall: "Audio Call",
+    };
+
+    final Map<AppointmentType, String> _price = {
+      AppointmentType.message: "\$${widget.doctor.messageConsultationFee.toStringAsFixed(2)} / consultation",
+      AppointmentType.videoCall: "\$${widget.doctor.videoConsultationFee.toStringAsFixed(2)} / consultation",
+      AppointmentType.audioCall: "\$${widget.doctor.audioConsultationFee.toStringAsFixed(2)} / consultation",
+    };
+
+    const double boxHeight = 70.0; // Hauteur fixe pour tous les champs
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: _category.entries.map((entry) {
+        final appointmentType = entry.key;
+        final isSelected = selectedAppointmentType == appointmentType;
+
+        return GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedAppointmentType = appointmentType;
             });
-        },
-        optionBuilder: (index, isSelected) =>Container(
-            margin:const  EdgeInsets.symmetric(horizontal: 4,vertical: 10),
-              height: 120,
-              width: 70,
-
-             // width: MediaQuery.of(context).size.width/4,
-              decoration: BoxDecoration(
-                boxShadow: [
-         BoxShadow(
-        color: Colors.grey.withOpacity(0.5), // Couleur de l'ombre et son opacité
-        spreadRadius: 2, // Étendue de l'ombre
-        blurRadius: 7, // Flou de l'ombre
-          offset: const Offset(0, 1), // Décalage de l'ombre par rapport au container
-         ),
-         ],
-                borderRadius: BorderRadius.circular(12),
-                color: isSelected ? primaryColor : Colors.white,
+            widget.onSelectedType(appointmentType);
+          },
+          child: Container(
+            height: boxHeight, // Hauteur fixe
+            margin: const EdgeInsets.symmetric(vertical: 6), // Espacement
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: isSelected ? primaryColor : Colors.grey, // Change la couleur ici
+                width: 2,
               ),
-              child:   Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-             Image.asset(
-             _imagePath[index],
-              width: 40,
-              height: 40,
-              color: isSelected ? bgColor : Colors.black,
+            ),
+            child: Row(
+              children: [
+                Image.asset(
+                  _imagePath[appointmentType]!,
+                  width: 30, // Taille réduite de l'image
+                  height: 30, // Taille réduite de l'image
+                  color: isSelected ? Colors.black : Colors.black,
+                ),
+                const SizedBox(width: 12), // Espacement entre l'image et le texte
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            entry.value,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: isSelected ? Colors.black : Colors.black,
+                            ),
+                          ),
+                          const SizedBox(width: 6), // Espacement avant "Popular"
+                          if (appointmentType == AppointmentType.videoCall)
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8,
+                                vertical: 2,
+                              ),
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 203, 230, 129),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Text(
+                                "Popular",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                      const SizedBox(height: 4), // Espacement entre titre et prix
+                      Text(
+                        _price[appointmentType]!,
+                        style: TextStyle(
+                          color: isSelected ? Colors.black54 : Colors.black54,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Radio(
+                  value: appointmentType,
+                  groupValue: selectedAppointmentType,
+                  onChanged: (value) {
+                    if (value != null) {
+                      setState(() {
+                        selectedAppointmentType = value;
+                      });
+                      widget.onSelectedType(selectedAppointmentType);
+                    }
+                  },
+                ),
+              ],
+            ),
           ),
-          Text( 
-            _category[index],
-         style: GoogleFonts.poppins(
-         textStyle:  TextStyle(       
-         fontSize: 20,
-         color: isSelected ? bgColor : Colors.black,
-         fontWeight: FontWeight.w500)) ,
-            )
-
-        ],),
-        )
+        );
+      }).toList(),
     );
-
   }
-
-  }
-
-   
+}

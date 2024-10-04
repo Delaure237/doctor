@@ -1,53 +1,61 @@
-import 'package:doctor/blocs/account_type/bloc/account_type_bloc.dart';
 
-import 'package:doctor/blocs/authentication_bloc/authentication_bloc.dart';
-import 'package:doctor/blocs/doctor_bloc/doctor_auth_bloc/bloc/doctor_auth_bloc.dart';
-import 'package:doctor/dr_app_view.dart';
-import 'package:doctor/patient_app_view.dart';
-import 'package:doctor/src/pages/onboarding_page/account_type.dart';
+import 'package:appointment_repository/appointment_repository.dart';
+
+import 'package:doctor/src/pages/auth/doctor_auth/conponents/sign_up/sign_up.dart';
+import 'package:doctor/src/pages/onboarding_page/components/splash_screen.dart';
+import 'package:doctor/src/pages/onboarding_page/onboarding_screen.dart';
+import 'package:doctor/src/pages/userprofile_page/user_profile_page.dart';
 import 'package:doctor_repository/doctor_repository.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:user_repository/user_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:user_repository/user_repository.dart';
+import 'bloc/doctor_bloc/dr_signup_bloc/bloc/dr_signup_bloc.dart';
+import 'src/pages/home/homepage_conponent/nav_bar.dart';
+
+
 class MyAppView extends StatelessWidget {
   final UserRepository userRepository;
   final DoctorRepository doctorRepository;
-  const MyAppView({super.key, required this.userRepository, required this.doctorRepository});
+  final AppointmentRepository appointmentRepository;
+
+  const MyAppView({
+    super.key,
+    required this.userRepository,
+    required this.doctorRepository,
+     required this.appointmentRepository,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Application',
       theme: ThemeData(
-        textTheme: GoogleFonts.poppinsTextTheme()
+        textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      title: "Firebase Auth",
-      home:BlocBuilder<AccountTypeBloc, AccountTypeState>(
-        builder: (context, state) {
-          if(state.selectedAccount == TypeOfAccount.doctor){
-            return RepositoryProvider<DoctorAuthBlocBloc>(
-              
-              create: (context) => DoctorAuthBlocBloc(doctorRepository),
-              child:const MyDrAppView(),
-              );
-          } else if(state.selectedAccount == TypeOfAccount.patient){
-            return RepositoryProvider<AuthenticationBloc>(
-      create: (context) => AuthenticationBloc(
-        userRepository: userRepository
-      ),
-      child: const MyPaAppView(),
-        );
-          } else {
-            return const AccountType();
-          }
-           
-        },
+      initialRoute: "/",
+      home:  const SplashScreen(), // Début avec la SplashScreen
+      routes: {
+        'onboarding' :(context) => const OnboardingPage(),
+        '/userProfile': (context) => BlocProvider(
+          create: (context) => DrSignupBloc(
+            doctorRepository: doctorRepository,
+          ),
+          child: const UserProfilePage(),
+        ),
         
- 
-     
-          
-      )
-      );
-}
+        '/doctorSignUp': (context) => BlocProvider(
+          create: (context) => DrSignupBloc(
+            doctorRepository: doctorRepository,
+          ),
+          child: const DoctorSignUp(),
+        ),
+        '/doctor': (context) => const ExploreBar(), // Mettez à jour les routes selon les besoins
+        '/patient': (context) => const ExploreBar(),
+
+
+      },
+    );
+  }
 }

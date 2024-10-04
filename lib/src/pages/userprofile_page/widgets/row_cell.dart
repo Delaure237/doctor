@@ -1,4 +1,4 @@
-import 'package:doctor/src/pages/shared_between_pages/constant/constant.dart';
+import 'package:doctor/src/pages/shared/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 class ProfilField extends StatelessWidget {
@@ -16,7 +16,9 @@ class ProfilField extends StatelessWidget {
         onTap;
       },
       child: ListTile(
-         leading: Icon(leading,color: primaryColor,),
+         leading: CircleAvatar(
+          backgroundColor: secondaryColor ,
+          child: Icon(leading,color: bgColor,)),
          title: Text(title,
          style: GoogleFonts.poppins(
           textStyle:const TextStyle(
